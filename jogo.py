@@ -108,3 +108,4 @@ while run:
     # sabendo as ferramentas basicas é possivel fazer muito mais.
 
     # Obrigado a todos pela participação!
+    
