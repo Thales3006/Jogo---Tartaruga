@@ -27,9 +27,11 @@ obsVel = 8
 colidiu = False
 pontos = 0
 #Pontos
+# aqui estamos primeiro especificando uma fonte para desenhar na tela
 font = pygame.font.Font("freesansbold.ttf", 32)
+# definimos a string que queremos e a cor dela para o pygame usar depois
 pontuacao = font.render("Pontos: "+str(pontos), True, (255,255,255))
-Morte = font.render("Morreu!", colidiu, (255,255,255))
+Morte = font.render("Morreu!", True, (255,255,255))
 
 #LOOP DO JOGO
 while run:
@@ -65,7 +67,7 @@ while run:
 
     #pontuação
     pontuacao = font.render("Pontuação: "+str(pontos), True, (255,255,255))#atualiza a string pontuação 
-    tela.blit(pontuacao, (10,10))#escreve a pontuação na tela
+    tela.blit(pontuacao, (10,10))#escreve a pontuação na tela na posicão 10,10
     #Gameover
     # segue a mesma lógica da pontuação, mas só aparece quando tivermos batido num obstaculo
     if colidiu == True: #quando verdadeiro faz aparecer na tela um texto de fim de jogo
@@ -98,3 +100,11 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+
+    # Para quem gostou do que fizemos, deixo um pequeno desafio: impedir que a tartaruga saia pelas bordas do jogo, boa sorte!
+
+    #espero que tenham gostado da nossa oficina, nós queríamos ensinar mais coisas, mas com o tempo que tivemos foi o que foi possível fazer
+    # e também espero que possam usar o que ensinamos para fazer alguns projetos próprios e se divertir com isso
+    # sabendo as ferramentas basicas é possivel fazer muito mais.
+
+    # Obrigado a todos pela participação!
