@@ -85,7 +85,7 @@ while run:
     # 
     # sempre fazemos isso para o menor objeto, porque existe um caso em que,
     # se o jogador for maior que o objeto, ele pode acabar atravesando o obstaculo sem que as condições sejam satisfeitas
-    # se no nosso jogo existisse obstaculos de variados tamanhos, o verificação teria mais if para vericar cada caso
+    # se no nosso jogo existisse obstaculos de variados tamanhos, a verificação teria mais IFs para vericar cada caso
     if (x >= obsX and x <= obsX+75) or (x+50 >= obsX and x+50 <= obsX+75):
         if  (y >= obsY and y <= obsY+75) or (y+50 >= obsY and y+50 <= obsY+75):
             colidiu = True
@@ -108,4 +108,3 @@ while run:
     # sabendo as ferramentas basicas é possivel fazer muito mais.
 
     # Obrigado a todos pela participação!
-    
