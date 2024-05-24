@@ -8,6 +8,7 @@ run = True
 tela_altura = 500
 tela_largura = 500
 tela = pygame.display.set_mode((tela_largura, tela_altura))
+
 #imagens
 #MODIFICAÇÃO: coloquei as imagens dentro de um arquivo para ficar mais organizado
 # o './'diz para o programa começar a procurar a imagem no mesmo arquivo que está o nosso programa
@@ -15,17 +16,21 @@ tela = pygame.display.set_mode((tela_largura, tela_altura))
 fundo = pygame.image.load("./imagens/teste.png")
 sprite = pygame.image.load("./imagens/sprite.png")
 obstaculos = pygame.image.load("./imagens/obstaculos.png")
+
 #player
 x = 50
 y = 50
 vel = 5
+
 #obstaculos
 obsX = 500
 obsY=random.randint(0,500)
 obsVel = 8
+
 #UI
 colidiu = False
 pontos = 0
+
 #Pontos
 # aqui estamos primeiro especificando uma fonte para desenhar na tela
 font = pygame.font.Font("freesansbold.ttf", 32)
@@ -74,21 +79,12 @@ while run:
         tela.blit(Morte, (250,250))
 
     #colisões
-    #Não tivemos muito tempo para explicar na nossa oficina, mas creio ter sido a parte mais dificil
+    #Não tivemos muito tempo para explicar na nossa oficina, mas creio ter sido a parte mais dificil de entender
     #
-    # Basicamente, o 1º IF verifica se um dos lados extremos da tartaruga está
-    # entre os lados extremos do obstaculo no eixo X
-    # 
-    # o 2º IF faz a mesma coisa mas no eixo Y
-    # 
-    # se as duas condiçoes forem verdadeiras, logo a tartaruga colidiu
-    # 
-    # sempre fazemos isso para o menor objeto, porque existe um caso em que,
-    # se o jogador for maior que o objeto, ele pode acabar atravesando o obstaculo sem que as condições sejam satisfeitas
-    # se no nosso jogo existisse obstaculos de variados tamanhos, a verificação teria mais IFs para vericar cada caso
-    if (x >= obsX and x <= obsX+75) or (x+50 >= obsX and x+50 <= obsX+75):
-        if  (y >= obsY and y <= obsY+75) or (y+50 >= obsY and y+50 <= obsY+75):
-            colidiu = True
+    # Basicamente, o IF verifica se a posição X e a posição Y do jogador estão em conflito com a do obstáculo
+    #
+    if x < obsX+75 and x+50 > obsX and y < obsY+75 and y+50 > obsY:
+        colidiu = True
 
     # a parte que faz a janela 'rodar' corretamente
     #  
